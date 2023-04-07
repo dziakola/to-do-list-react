@@ -4,6 +4,7 @@ import Button from '../Button/Button';
 import TextInput from '../TextInput/TextInput';
 import { useDispatch } from 'react-redux';
 import shortid from 'shortid';
+import { addColumn } from '../../redux/store';
 
 const ColumnForm = props => {
     const dispatch = useDispatch();
@@ -11,7 +12,7 @@ const ColumnForm = props => {
     const [icon, setIcon] = useState('');
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch({ type: 'ADD_COLUMN', payload: { id: shortid(), title, icon} });
+        dispatch(addColumn( {id: shortid(), title, icon}));
         //wywolanie funkcji otrzymanej od parametru action w List, przekazuje jej inf co było w input value
         setTitle('');
         setIcon('');

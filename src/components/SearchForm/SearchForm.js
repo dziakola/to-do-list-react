@@ -1,7 +1,7 @@
 import styles from './SearchForm.module.scss';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
-
+import { searchCarts } from '../../redux/store';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 const SearchForm = () => {
@@ -10,7 +10,7 @@ const SearchForm = () => {
     const dispatch = useDispatch();
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch({ type: 'SEARCH', payload: title });
+        dispatch(searchCarts(title));
         //wywolanie funkcji otrzymanej od parametru action w List, przekazuje jej inf co było w input value
         setTitle('');
     }
