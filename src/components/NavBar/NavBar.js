@@ -2,6 +2,7 @@ import styles from './NavBar.module.scss';
 import 'font-awesome/css/font-awesome.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faTasks} from '@fortawesome/free-solid-svg-icons'
+import { NavLink } from 'react-router-dom';
 
 
 const NavBar = () => {
@@ -11,9 +12,9 @@ const NavBar = () => {
             <a href="/" className={styles.navbarlink}><FontAwesomeIcon icon={faTasks} /></a>
         </div>
          <div>
-            <a href="/" className={styles.navbarlink}>Home</a>
-            <a href="/favorite" className={styles.navbarlink}>Favorite</a>
-            <a href="/about" className={styles.navbarlink}>About</a>
+            <NavLink to="/" className={({isActive}) => isActive ? styles.linkActive : styles.navbarlink} >Home</NavLink>
+            <NavLink to="/favorite" className={({isActive}) => isActive ? styles.linkActive : styles.navbarlink}>Favorite</NavLink>
+            <NavLink to="/about" className={({isActive}) => isActive ? styles.linkActive : styles.navbarlink}>About</NavLink>
         </div>
     </nav> )
 }

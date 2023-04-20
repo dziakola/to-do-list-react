@@ -12,7 +12,7 @@ const ColumnForm = props => {
     const [icon, setIcon] = useState('');
     const handleSubmit = e => {
         e.preventDefault();
-        dispatch(addColumn( {id: shortid(), title, icon}));
+        dispatch(addColumn( {id: shortid(), title, icon, listId:props.listId}));
         //wywolanie funkcji otrzymanej od parametru action w List, przekazuje jej inf co było w input value
         setTitle('');
         setIcon('');
