@@ -19,6 +19,7 @@ export const getAllLists = state => state.lists;
 // action creators
 export const addColumn = payload => ({ type: 'ADD_COLUMN', payload });
 export const addCart = payload => ({type: 'ADD_CARD', payload});
+export const addList = payload => ({ type: 'ADD_LIST', payload });
 export const searchCarts = payload =>  ({type: 'SEARCH', payload});
 export const clearSearch = payload => ({type: 'CLEAR_SEARCH',payload});
 
@@ -28,6 +29,8 @@ const reducer = (state, action) => {
       return { ...state, columns: [...state.columns, {...action.payload }]};
     case 'ADD_CARD':
       return {...state, cards: [...state.cards, {...action.payload}]}
+    case 'ADD_LIST':
+      return {...state, lists: [...state.lists, {...action.payload}]}
     case 'SEARCH':
       return {...state, search: action.payload}
     case 'CLEAR_SEARCH':
