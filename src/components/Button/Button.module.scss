@@ -1,11 +1,12 @@
 @import '../../styles/settings.scss';
 .button {
     border:0;
-    color: $color-light;
+    background-color: silver;
+    color: black;
     text-align: center;
     line-height: 1.3;
     padding: $base-size;
-    margin: 0 $base-size $base-size $base-size;
+    margin: 0 5px 5px 5px;
     border-radius: $radius;
     cursor: pointer;
     font-weight: 700;

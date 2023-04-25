@@ -1,7 +1,7 @@
 import styles from './SearchForm.module.scss';
 import TextInput from '../TextInput/TextInput';
 import Button from '../Button/Button';
-import { searchCarts, clearSearch } from '../../redux/store';
+import { searchCarts, clearSearch } from '../../redux/searchStringReducer.js';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
